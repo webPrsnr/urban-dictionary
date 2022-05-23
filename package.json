@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  },
+  "name": "urban-dictionary",
+  "description": "urban dictionary for Russian",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "scripts": {
+    "dev": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webPrsnr/urban-dictionary.git"
+  },
+  "author": "webPrsnr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webPrsnr/urban-dictionary/issues"
+  },
+  "homepage": "https://github.com/webPrsnr/urban-dictionary#readme"
+}
