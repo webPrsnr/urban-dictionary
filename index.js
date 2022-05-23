@@ -1,8 +1,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const v1DictionaryRouter = require("./src/back/v1/routes/dictionaryRoutes");
+const cors = require("cors");
 
 const app = express();
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 
 const PORT = process.env.PORT || 8080;
 
