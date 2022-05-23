@@ -1,5 +1,15 @@
-const getAllWords = (req, res) => {
-  return;
+const dictionaryService = require("../services/dictionaryService");
+
+const getAllWords = async (req, res) => {
+  try {
+    const allWords = await dictionaryService.getAllWords();
+    res.json({ status: "OK", data: allWords });
+  } catch (error) {
+    res.status(error?.status || 500).send({
+      status: "FAILED",
+      data: { error: error?.message || error },
+    });
+  }
 };
 
 const getOneWord = (req, res) => {
