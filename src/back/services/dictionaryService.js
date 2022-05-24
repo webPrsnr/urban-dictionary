@@ -1,4 +1,5 @@
 const Dictionary = require("../database/Dictionary");
+const { v4: uuid } = require("uuid");
 
 const getAllWords = async () => {
   try {
@@ -9,6 +10,22 @@ const getAllWords = async () => {
   }
 };
 
+const createNewWord = async (newWord) => {
+  const wordToInsert = {
+    id: uuid(),
+    ...newWord,
+    created_at: new Date().toLocaleString(),
+    updated_at: new Date().toLocaleString(),
+  };
+  try {
+    const createdWord = await Dictionary.createNewWord(wordToInsert);
+    return createdWord;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllWords,
+  createNewWord,
 };
