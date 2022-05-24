@@ -12,7 +12,25 @@ const getAllWords = async (req, res) => {
   }
 };
 
-const getOneWord = (req, res) => {
+const getOneWord = async (req, res) => {
+  const {
+    params: { wordID },
+  } = req;
+  if (!wordID) {
+    res.status(400).send({
+      status: "FAILED",
+      data: { error: "Parameter ':wordID' can not be empty." },
+    });
+  }
+  try {
+    const oneWord = await dictionaryService.getOneWord(wordID);
+    res.send({ status: "OK", data: oneWord });
+  } catch (error) {
+    res.status(error?.status || 500).send({
+      status: "FAILED",
+      data: { error: error?.message || error },
+    });
+  }
   return;
 };
 

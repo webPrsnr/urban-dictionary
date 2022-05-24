@@ -56,7 +56,30 @@ const createNewWord = (newWord) => {
   });
 };
 
+const getOneWord = (wordID) => {
+  return new Promise((res, rej) => {
+    try {
+      const GET_WORD = `SELECT * FROM words WHERE id = ?`;
+      db.all(GET_WORD, wordID, (err, row) => {
+        if (err) {
+          throw {
+            status: 500,
+            message: err,
+          };
+        }
+        res(row);
+      });
+    } catch (err) {
+      throw {
+        status: 500,
+        message: err,
+      };
+    }
+  });
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
+  getOneWord,
 };

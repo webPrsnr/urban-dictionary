@@ -18,7 +18,17 @@ const createNewWord = async (newWord) => {
   }
 };
 
+const getOneWord = (wordID) => {
+  try {
+    const resultWord = DbUtils.getOneWord(wordID);
+    return resultWord;
+  } catch (err) {
+    throw err;
+  }
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
+  getOneWord,
 };

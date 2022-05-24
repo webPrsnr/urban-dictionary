@@ -25,7 +25,17 @@ const createNewWord = async (newWord) => {
   }
 };
 
+const getOneWord = async (wordID) => {
+  try {
+    const word = await Dictionary.getOneWord(wordID);
+    return word;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
+  getOneWord,
 };
