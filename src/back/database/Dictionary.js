@@ -9,6 +9,16 @@ const getAllWords = async () => {
   }
 };
 
+const createNewWord = async (newWord) => {
+  try {
+    const insertWord = await DbUtils.createNewWord(newWord);
+    return insertWord;
+  } catch (err) {
+    throw err;
+  }
+};
+
 module.exports = {
   getAllWords,
+  createNewWord,
 };
