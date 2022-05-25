@@ -40,9 +40,7 @@ const createNewWord = async (req, res) => {
     !body.word_name ||
     !body.transcription ||
     !body.mean ||
-    !body.description ||
-    !body.created_at ||
-    !body.updated_at
+    !body.description
   ) {
     res.status(400).send({
       status: "FAILED",
