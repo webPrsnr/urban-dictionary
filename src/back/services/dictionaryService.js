@@ -34,8 +34,22 @@ const getOneWord = async (wordID) => {
   }
 };
 
+const updateOneWord = async (id, changes) => {
+  const updatedChanges = {
+    ...changes,
+    updated_at: new Date().toLocaleString(),
+  };
+  try {
+    const updatedWord = await Dictionary.updateOneWord(id, updatedChanges);
+    return updatedWord;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
   getOneWord,
+  updateOneWord,
 };

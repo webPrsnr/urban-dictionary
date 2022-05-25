@@ -70,8 +70,28 @@ const createNewWord = async (req, res) => {
   }
 };
 
-const updateOneWord = (req, res) => {
-  return;
+const updateOneWord = async (req, res) => {
+  const {
+    body,
+    params: { wordID },
+  } = req;
+  if (!wordID) {
+    res.status(400).send({
+      status: "FAILED",
+      data: {
+        error: "Parameter ':wordID' can not be empty.",
+      },
+    });
+  }
+  try {
+    const updatedWord = await dictionaryService.updateOneWord(wordID, body);
+    res.send({ status: "OK", data: updatedWord });
+  } catch (error) {
+    res.status(error?.status || 500).send({
+      status: "FAILED",
+      data: { error: error?.message || error },
+    });
+  }
 };
 
 const deleteOneWord = (req, res) => {

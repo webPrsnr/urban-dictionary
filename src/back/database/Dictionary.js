@@ -27,8 +27,19 @@ const getOneWord = (wordID) => {
   }
 };
 
+const updateOneWord = async (id, changes) => {
+  try {
+    const updatedWord = await DbUtils.updateOneWord(id, changes);
+    console.log(updatedWord);
+    return updatedWord;
+  } catch (err) {
+    throw err;
+  }
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
   getOneWord,
+  updateOneWord,
 };
