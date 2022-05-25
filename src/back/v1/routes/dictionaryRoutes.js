@@ -12,6 +12,6 @@ router.post("/", dictionaryController.createNewWord);
 
 router.patch("/:wordID", dictionaryController.updateOneWord);
 
-router.delete("/wordID", dictionaryController.deleteOneWord);
+router.delete("/:wordID", dictionaryController.deleteOneWord);
 
 module.exports = router;
