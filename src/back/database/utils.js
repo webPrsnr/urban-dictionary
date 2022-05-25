@@ -59,8 +59,7 @@ const getOneWord = (wordID) => {
 
 const updateOneWord = async (id, changes) => {
   return new Promise((res, rej) => {
-    try {
-      const UPDATE_WORD = `UPDATE words SET
+    const UPDATE_WORD = `UPDATE words SET
     word_name = COALESCE(?, word_name),
     transcription = COALESCE(?, transcription),
     mean = COALESCE(?, mean),
@@ -69,42 +68,38 @@ const updateOneWord = async (id, changes) => {
     updated_at = COALESCE(?, updated_at)
     WHERE id = ?
     `;
-      db.run(
-        UPDATE_WORD,
-        [
-          changes.word_name,
-          changes.transcription,
-          changes.mean,
-          changes.description,
-          changes.created_at,
-          changes.updated_at,
-          id,
-        ],
-        (result, err) => {
-          if (err) {
-            throw {
-              status: 500,
-              message: err,
-            };
-          }
-          console.log(changes);
-          res({
-            id: id,
-            word_name: changes?.word_name,
-            transcription: changes?.transcription,
-            mean: changes?.mean,
-            description: changes?.description,
-            created_at: changes?.created_at,
-            updated_at: changes.updated_at,
-          });
+    db.run(
+      UPDATE_WORD,
+      [
+        changes.word_name,
+        changes.transcription,
+        changes.mean,
+        changes.description,
+        changes.created_at,
+        changes.updated_at,
+        id,
+      ],
+      function (result, err) {
+        if (err) {
+          throw {
+            status: 500,
+            message: err,
+          };
         }
-      );
-    } catch (err) {
-      throw {
-        status: 500,
-        message: err,
-      };
-    }
+        if (this.changes === 0) {
+          rej({ status: 404, message: "ID does not exist" });
+        }
+        res({
+          id: id,
+          word_name: changes?.word_name,
+          transcription: changes?.transcription,
+          mean: changes?.mean,
+          description: changes?.description,
+          created_at: changes?.created_at,
+          updated_at: changes.updated_at,
+        });
+      }
+    );
   });
 };
 
