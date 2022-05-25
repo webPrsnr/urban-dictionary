@@ -94,8 +94,27 @@ const updateOneWord = async (req, res) => {
   }
 };
 
-const deleteOneWord = (req, res) => {
-  return;
+const deleteOneWord = async (req, res) => {
+  const {
+    params: { wordID },
+  } = req;
+  if (!wordID) {
+    res.status(400).send({
+      status: "FAILED",
+      data: {
+        error: "Parameter ':wordID' can not be empty.",
+      },
+    });
+  }
+  try {
+    const result = await dictionaryService.deleteOneWord(wordID);
+    res.status(200).send({ status: "OK", data: result });
+  } catch (error) {
+    res.status(error?.status || 500).send({
+      status: "FAILED",
+      data: { error: error?.message || error },
+    });
+  }
 };
 
 module.exports = {

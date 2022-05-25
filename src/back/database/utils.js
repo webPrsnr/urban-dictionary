@@ -128,9 +128,32 @@ const updateOneWord = async (id, changes) => {
   });
 };
 
+const deleteOneWord = (id) => {
+  return new Promise((res, rej) => {
+    try {
+      const DELETE_WORD = `DELETE FROM words WHERE id=?`;
+      db.run(DELETE_WORD, id, (result, err) => {
+        if (err) {
+          throw {
+            status: 500,
+            message: err,
+          };
+        }
+        res(result);
+      });
+    } catch (err) {
+      throw {
+        status: 500,
+        message: err,
+      };
+    }
+  });
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
   getOneWord,
   updateOneWord,
+  deleteOneWord,
 };

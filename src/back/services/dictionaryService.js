@@ -47,9 +47,18 @@ const updateOneWord = async (id, changes) => {
   }
 };
 
+const deleteOneWord = async (id) => {
+  try {
+    return await Dictionary.deleteOneWord(id);
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllWords,
   createNewWord,
   getOneWord,
   updateOneWord,
+  deleteOneWord,
 };

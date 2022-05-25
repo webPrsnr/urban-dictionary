@@ -30,8 +30,16 @@ const getOneWord = (wordID) => {
 const updateOneWord = async (id, changes) => {
   try {
     const updatedWord = await DbUtils.updateOneWord(id, changes);
-    console.log(updatedWord);
     return updatedWord;
+  } catch (err) {
+    throw err;
+  }
+};
+
+const deleteOneWord = async (id) => {
+  try {
+    const changes = await DbUtils.deleteOneWord(id);
+    return changes;
   } catch (err) {
     throw err;
   }
@@ -42,4 +50,5 @@ module.exports = {
   createNewWord,
   getOneWord,
   updateOneWord,
+  deleteOneWord,
 };
