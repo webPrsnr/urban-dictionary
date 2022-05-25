@@ -101,13 +101,14 @@ const updateOneWord = async (id, changes) => {
           changes.updated_at,
           id,
         ],
-        (err) => {
+        (result, err) => {
           if (err) {
             throw {
               status: 500,
               message: err,
             };
           }
+          console.log(changes);
           res({
             id: id,
             word_name: changes?.word_name,
@@ -130,23 +131,22 @@ const updateOneWord = async (id, changes) => {
 
 const deleteOneWord = (id) => {
   return new Promise((res, rej) => {
-    try {
-      const DELETE_WORD = `DELETE FROM words WHERE id=?`;
-      db.run(DELETE_WORD, id, (result, err) => {
-        if (err) {
-          throw {
-            status: 500,
-            message: err,
-          };
-        }
-        res(result);
-      });
-    } catch (err) {
-      throw {
-        status: 500,
-        message: err,
-      };
-    }
+    const DELETE_WORD = "DELETE FROM words WHERE ids= ? ";
+    db.run(DELETE_WORD, id, function (result, err) {
+      if (err) {
+        rej({
+          status: 500,
+          message: err,
+        });
+      }
+      if (this.changes === 0) {
+        rej({
+          status: 404,
+          message: "ID does not exist",
+        });
+      }
+      res(result);
+    });
   });
 };
 
