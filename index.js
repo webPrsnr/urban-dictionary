@@ -17,8 +17,8 @@ app.use(bodyParser.json());
 
 app.use(express.static("./src/front/dist"));
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "./src/front/dist/index.html"));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname + "/src/front/dist", "index.html"));
 });
 
 app.use("/api/v1/words", v1DictionaryRouter);
