@@ -1,0 +1,54 @@
+$headBackColor: #f1f7fd;
+$hooverColor: #0345bf;
+$linkColor: rgb(37, 37, 37);
+
+.header_outer_block {
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: $headBackColor;
+}
+
+.header_inner_block {
+  max-width: 1140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: $linkColor;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+  .header__logo_title {
+    font-family: "Roboto", sans-serif;
+  }
+  .header__logo_subtitle {
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+}
+
+.header__nav {
+  font-family: "Roboto", sans-serif;
+  .header__list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    .header__list_el + .header__list_el {
+      margin-left: 28px;
+    }
+
+    .header__link {
+      color: $linkColor;
+      &:hover {
+        color: $hooverColor;
+      }
+    }
+  }
+}
