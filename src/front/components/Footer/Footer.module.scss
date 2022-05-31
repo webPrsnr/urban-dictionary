@@ -1,0 +1,20 @@
+$footerColor: #394551;
+$footerFontColor: rgb(162, 162, 162);
+
+footer {
+  background-color: $footerColor;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: $footerFontColor;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 12px;
+
+  a {
+    color: $footerFontColor;
+    &:hover {
+      color: #fff;
+    }
+    transition: 0.4s;
+  }
+}
