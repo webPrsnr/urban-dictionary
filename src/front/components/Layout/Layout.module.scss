@@ -5,3 +5,18 @@ body {
 a {
   text-decoration: none;
 }
+
+h1,
+h2 {
+  margin: 0;
+}
+
+main {
+  flex: 1;
+}
+
+.initBody {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
