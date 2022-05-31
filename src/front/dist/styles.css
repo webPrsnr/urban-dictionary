@@ -1,0 +1,61 @@
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/front/components/Header/Header.module.scss ***!
+  \***********************************************************************************************************************************************************************************/
+.v2HI9eMPkVXemCMWHRha {
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f1f7fd;
+}
+
+.Pp0tUh97dtBfGjn0sRxi {
+  max-width: 1140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: rgb(37, 37, 37);
+}
+
+.IwT_QxipiNQzzML4uAns {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+}
+.IwT_QxipiNQzzML4uAns .kqYLIfFnXLB6BQo04w07 {
+  font-family: "Roboto", sans-serif;
+}
+.IwT_QxipiNQzzML4uAns .JvgHIvHC170ZVruDsv3O {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.mAwlhAdicsgICpR0t7G3 {
+  font-family: "Roboto", sans-serif;
+}
+.mAwlhAdicsgICpR0t7G3 .MinMfm6D1sBec2WnvtuQ {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.mAwlhAdicsgICpR0t7G3 .MinMfm6D1sBec2WnvtuQ .SWvCiWAS7mZ08m_qkozq + .SWvCiWAS7mZ08m_qkozq {
+  margin-left: 28px;
+}
+.mAwlhAdicsgICpR0t7G3 .MinMfm6D1sBec2WnvtuQ .gzKSsbfmKozZl6cToIdH {
+  color: rgb(37, 37, 37);
+}
+.mAwlhAdicsgICpR0t7G3 .MinMfm6D1sBec2WnvtuQ .gzKSsbfmKozZl6cToIdH:hover {
+  color: #0345bf;
+}
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/front/components/Layout/Layout.module.scss ***!
+  \***********************************************************************************************************************************************************************************/
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
