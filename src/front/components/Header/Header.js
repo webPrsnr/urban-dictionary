@@ -14,39 +14,45 @@ const Header = () => {
     setDropDownFlag(false);
   };
 
+  const alphabets = [
+    "А",
+    "Б",
+    "В",
+    "Г",
+    "Д",
+    "Е",
+    "Ё",
+    "Ж",
+    "З",
+    "И",
+    "Й",
+    "К",
+    "Л",
+    "М",
+    "Н",
+    "О",
+    "П",
+    "Р",
+    "С",
+    "Т",
+    "У",
+    "Ф",
+    "Х",
+    "Ц",
+    "Ч",
+    "Ш",
+    "Щ",
+    "Э",
+    "Ю",
+    "Я",
+  ];
+
   const dropDown = (
     <div className={styles.header__dropdown} onMouseEnter={showDropDown}>
       <ul className={styles.header__alphabet}>
-        <li>А</li>
-        <li>Б</li>
-        <li>В</li>
-        <li>Г</li>
-        <li>Д</li>
-        <li>Е</li>
-        <li>Ё</li>
-        <li>Ж</li>
-        <li>З</li>
-        <li>И</li>
-        <li>Й</li>
-        <li>К</li>
-        <li>Л</li>
-        <li>М</li>
-        <li>Н</li>
-        <li>О</li>
-        <li>П</li>
-        <li>Р</li>
-        <li>С</li>
-        <li>Т</li>
-        <li>У</li>
-        <li>Ф</li>
-        <li>Х</li>
-        <li>Ц</li>
-        <li>Ч</li>
-        <li>Ш</li>
-        <li>Щ</li>
-        <li>Э</li>
-        <li>Ю</li>
-        <li>Я</li>
+        {alphabets.map((alphabet, index) => (
+          <li key={index}>{alphabet}</li>
+        ))}
       </ul>
     </div>
   );
