@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 
@@ -13,6 +13,9 @@ const Header = () => {
   const hideDropDown = () => {
     setDropDownFlag(false);
   };
+
+  const setActive = ({ isActive }) =>
+    isActive ? styles.active_link : styles.header__link;
 
   const alphabets = [
     "А",
@@ -66,25 +69,25 @@ const Header = () => {
           </div>
           <nav className={styles.header__nav}>
             <ul className={styles.header__list}>
-              <li className={styles.header__list_el}>
-                <Link className={styles.header__link} to="/">
+              <li className={`${styles.header__list_el}`}>
+                <NavLink className={setActive} to="/">
                   Home
-                </Link>
+                </NavLink>
               </li>
               <li
                 className={styles.header__list_el}
                 onMouseEnter={showDropDown}
                 onMouseLeave={hideDropDown}
               >
-                <Link className={styles.header__link} to="/browse">
+                <NavLink className={setActive} to="/browse">
                   Browse
-                </Link>
+                </NavLink>
                 {dropDownFlag ? dropDown : null}
               </li>
               <li className={styles.header__list_el}>
-                <Link className={styles.header__link} to="/words">
+                <NavLink className={setActive} to="/words">
                   Words
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </nav>

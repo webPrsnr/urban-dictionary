@@ -86,3 +86,8 @@ $linkColor: rgb(37, 37, 37);
     }
   }
 }
+
+.active_link {
+  border-bottom: 2px solid $linkColor;
+  color: $hooverColor;
+}
