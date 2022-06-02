@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 
@@ -54,7 +54,9 @@ const Header = () => {
     <div className={styles.header__dropdown} onMouseEnter={showDropDown}>
       <ul className={styles.header__alphabet}>
         {alphabets.map((alphabet, index) => (
-          <li key={index}>{alphabet}</li>
+          <Link key={index} to={`/browse/${alphabet}`}>
+            <li className={styles.alphabet__link}>{alphabet}</li>
+          </Link>
         ))}
       </ul>
     </div>
