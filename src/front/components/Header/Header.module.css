@@ -1,0 +1,91 @@
+.header_outer_block {
+  padding-right: 60px;
+  padding-left: 60px;
+  background-color: #f1f7fd;
+}
+
+.header_inner_block {
+  max-width: 1140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  color: #252525;
+}
+
+.header__logo {
+  display: flex;
+  flex-direction: column;
+  flex: 0.5;
+}
+
+.header__logo .header__logo_title {
+  font-family: "Roboto", sans-serif;
+}
+
+.header__logo .header__logo_subtitle {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.header__nav {
+  font-family: "Roboto", sans-serif;
+}
+
+.header__nav .header__list {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header__nav .header__list .header__list_el {
+  position: relative;
+  display: block;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.header__nav .header__list .header__list_el + .header__list_el {
+  margin-left: 28px;
+}
+
+.header__nav .header__list .header__link {
+  color: #252525;
+}
+
+.header__nav .header__list .header__link:hover {
+  color: #0345bf;
+}
+
+.header__dropdown {
+  position: absolute;
+  left: 0;
+  width: 250px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #252525;
+}
+
+.header__dropdown .header__alphabet {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.25rem;
+}
+
+.alphabet__link {
+  background-color: #f1f7fd;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.active_link {
+  border-bottom: 2px solid #252525;
+  color: #0345bf;
+}
