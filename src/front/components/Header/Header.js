@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { useState } from "react";
+import alphabet from "./alphabet";
 
 const Header = () => {
   const [dropDownFlag, setDropDownFlag] = useState(false);
@@ -17,45 +18,12 @@ const Header = () => {
   const setActive = ({ isActive }) =>
     isActive ? styles.active_link : styles.header__link;
 
-  const alphabets = [
-    "А",
-    "Б",
-    "В",
-    "Г",
-    "Д",
-    "Е",
-    "Ё",
-    "Ж",
-    "З",
-    "И",
-    "Й",
-    "К",
-    "Л",
-    "М",
-    "Н",
-    "О",
-    "П",
-    "Р",
-    "С",
-    "Т",
-    "У",
-    "Ф",
-    "Х",
-    "Ц",
-    "Ч",
-    "Ш",
-    "Щ",
-    "Э",
-    "Ю",
-    "Я",
-  ];
-
   const dropDown = (
     <div className={styles.header__dropdown} onMouseEnter={showDropDown}>
       <ul className={styles.header__alphabet}>
-        {alphabets.map((alphabet, index) => (
-          <Link key={index} to={`/browse/${alphabet}`}>
-            <li className={styles.alphabet__link}>{alphabet}</li>
+        {alphabet.map((letter, index) => (
+          <Link key={index} to={`/browse/${letter}`}>
+            <li className={styles.alphabet__link}>{letter}</li>
           </Link>
         ))}
       </ul>
