@@ -74,17 +74,17 @@ $linkColor: rgb(37, 37, 37);
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.25rem;
-
-    & > li {
-      background-color: $headBackColor;
-      height: 2.5rem;
-      width: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-    }
   }
+}
+
+.alphabet__link {
+  background-color: $headBackColor;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .active_link {
