@@ -1,8 +1,8 @@
 const DbUtils = require("./utils");
 
-const getAllWords = async () => {
+const getAllWords = async (filterParam) => {
   try {
-    const allWords = await DbUtils.getAllWords();
+    const allWords = await DbUtils.getAllWords(filterParam);
     return allWords;
   } catch (err) {
     throw err;

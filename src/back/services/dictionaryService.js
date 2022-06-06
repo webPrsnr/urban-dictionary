@@ -1,9 +1,9 @@
 const Dictionary = require("../database/Dictionary");
 const { v4: uuid } = require("uuid");
 
-const getAllWords = async () => {
+const getAllWords = async (filterParam) => {
   try {
-    const allWords = await Dictionary.getAllWords();
+    const allWords = await Dictionary.getAllWords(filterParam);
     return allWords;
   } catch (error) {
     throw error;
