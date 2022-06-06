@@ -5,7 +5,7 @@ const getAllWords = (filterParam) => {
     const { alphabet } = filterParam;
     return new Promise((res, rej) => {
       const GET_ALL_WORD_BY_ALPHABET = `SELECT * FROM words WHERE word_name LIKE ?`;
-      db.all(GET_ALL_WORD_BY_ALPHABET, ["%" + alphabet + "%"], (err, rows) => {
+      db.all(GET_ALL_WORD_BY_ALPHABET, [alphabet + "%"], (err, rows) => {
         if (err) {
           rej({
             status: 500,
