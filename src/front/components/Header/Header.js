@@ -49,9 +49,7 @@ const Header = () => {
                 onMouseEnter={showDropDown}
                 onMouseLeave={hideDropDown}
               >
-                <NavLink className={setActive} to="/browse">
-                  Browse
-                </NavLink>
+                Browse
                 {dropDownFlag ? dropDown : null}
               </li>
               <li className={styles.header__list_el}>
