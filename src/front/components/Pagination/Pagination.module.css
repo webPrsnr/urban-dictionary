@@ -1,0 +1,25 @@
+.page_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.page_link {
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.page_link:hover:not(.page_active) {
+  background-color: #ddd;
+}
+
+.page_active {
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+}
