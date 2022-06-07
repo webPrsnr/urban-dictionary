@@ -1,9 +1,10 @@
+import Letter from "../Letter/Letter";
 import styles from "./LetterList.module.scss";
 const LetterList = ({ letters }) => {
   return (
     <div className={styles.letter_list}>
       {letters.map((letter) => (
-        <p key={letter.id}>{letter.word_name}</p>
+        <Letter key={letter.id} letter={letter.word_name} id={letter.id} />
       ))}
     </div>
   );
