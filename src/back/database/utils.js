@@ -2,18 +2,35 @@ const db = require("../../../db_init");
 
 const getAllWords = (filterParam) => {
   if (filterParam.alphabet) {
-    const { alphabet } = filterParam;
+    const { alphabet, _offset } = filterParam;
+    console.log(alphabet, _offset);
     return new Promise((res, rej) => {
-      const GET_ALL_WORD_BY_ALPHABET = `SELECT * FROM words WHERE word_name LIKE ?`;
-      db.all(GET_ALL_WORD_BY_ALPHABET, [alphabet + "%"], (err, rows) => {
-        if (err) {
-          rej({
-            status: 500,
-            message: err,
-          });
+      const GET_ALL_WORD_BY_ALPHABET = `SELECT * FROM words WHERE word_name LIKE ? LIMIT ? OFFSET ?`;
+      db.all(
+        GET_ALL_WORD_BY_ALPHABET,
+        [alphabet + "%", 12, _offset],
+        (err, rows) => {
+          if (err) {
+            rej({
+              status: 500,
+              message: err,
+            });
+          }
+          db.all(
+            `SELECT * FROM words WHERE word_name LIKE ?`,
+            [alphabet + "%"],
+            (err, totalRows) => {
+              if (err) {
+                rej({
+                  status: 500,
+                  message: err,
+                });
+              }
+              res({ totalRows, rows });
+            }
+          );
         }
-        res(rows);
-      });
+      );
     });
   }
   return new Promise((res, rej) => {
