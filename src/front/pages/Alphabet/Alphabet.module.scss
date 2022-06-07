@@ -15,6 +15,7 @@ $letterColor: #6c757d;
 
 .letters_block {
   color: $fontColor;
+  font-family: "Roboto", sans-serif;
 
   & span {
     color: $letterColor;
