@@ -1,0 +1,22 @@
+$wrapperWidth: 1000px;
+$fontColor: rgb(37, 37, 37);
+$letterColor: #6c757d;
+
+.wrapper_outer {
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.wrapper_inner {
+  max-width: $wrapperWidth;
+  margin: 0 auto;
+}
+
+.letters_block {
+  color: $fontColor;
+
+  & span {
+    color: $letterColor;
+  }
+}
