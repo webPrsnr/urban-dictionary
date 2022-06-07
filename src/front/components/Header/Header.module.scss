@@ -91,3 +91,15 @@ $linkColor: rgb(37, 37, 37);
   border-bottom: 2px solid $linkColor;
   color: $hooverColor;
 }
+
+.browser_link {
+  position: relative;
+}
+
+.browser_link::after {
+  position: absolute;
+  content: "\25BC";
+  font-size: 13px;
+  top: 1px;
+  left: 2px;
+}

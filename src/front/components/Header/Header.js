@@ -49,7 +49,7 @@ const Header = () => {
                 onMouseEnter={showDropDown}
                 onMouseLeave={hideDropDown}
               >
-                Browse
+                Browse <span className={styles.browser_link}></span>
                 {dropDownFlag ? dropDown : null}
               </li>
               <li className={styles.header__list_el}>
