@@ -1,0 +1,16 @@
+$letterColor: rgb(37, 37, 37);
+$hooverColor: #4caf50;
+
+.letter_link {
+  text-align: center;
+}
+
+.letter_paragraph {
+  font-family: "Roboto", sans-serif;
+  color: $letterColor;
+  &:hover {
+    text-decoration: underline;
+    color: $hooverColor;
+    cursor: pointer;
+  }
+}
