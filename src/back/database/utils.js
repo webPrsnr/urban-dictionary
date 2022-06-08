@@ -136,7 +136,7 @@ const updateOneWord = async (id, changes) => {
 
 const deleteOneWord = (id) => {
   return new Promise((res, rej) => {
-    const DELETE_WORD = "DELETE FROM words WHERE ids= ? ";
+    const DELETE_WORD = "DELETE FROM words WHERE id= ? ";
     db.run(DELETE_WORD, id, function (result, err) {
       if (err) {
         rej({
