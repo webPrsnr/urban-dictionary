@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import ReactPaginate from "react-paginate";
 import { useParams } from "react-router-dom";
 import LetterList from "../../components/LetterList/LetterList";
 import Pagination from "../../components/Pagination/Pagination";
