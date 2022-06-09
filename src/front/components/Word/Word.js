@@ -1,17 +1,34 @@
 import styles from "./Word.module.scss";
+import Modal from "../Modal/Modal";
+import DeleteWord from "../DeleteWord/DeleteWord";
+import { useState } from "react";
 
 const Word = ({ item }) => {
-  console.log(item);
+  const transformToDate = (str) => {
+    return str.split(",")[0];
+  };
+
+  const [modalFlag, setModalFlag] = useState(false);
+
+  const modalDeleteWord = () => {
+    setModalFlag(true);
+  };
+
   return (
     <div className={styles.word__outter}>
       <div className={styles.word__inner}>
         <div className={styles.word__wrapper}>
           <div className={styles.word__head}>
             <time title={"updated at"} className={styles.word__head_updated}>
-              19.02.2020
+              {transformToDate(item.created_at)}
             </time>
+            <span className={styles.word__head_delete}></span>
+            <span
+              className={styles.word__head_config}
+              onClick={modalDeleteWord}
+            ></span>
             <time title={"created at"} className={styles.word__head_created}>
-              20.02.2020
+              {transformToDate(item.updated_at)}
             </time>
           </div>
           <div className={styles.word__meaning}>
@@ -28,6 +45,9 @@ const Word = ({ item }) => {
           </div>
         </div>
       </div>
+      <Modal modalFlag={modalFlag} setModalFlag={setModalFlag}>
+        <DeleteWord name={item.word_name} id={item.id} />
+      </Modal>
     </div>
   );
 };
