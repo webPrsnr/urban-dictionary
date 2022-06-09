@@ -1,0 +1,30 @@
+.delete {
+  font-family: "Roboto", sans-serif;
+  &__head {
+    border-bottom: 2px solid;
+    text-transform: uppercase;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
+  &__descr {
+    span {
+      text-transform: uppercase;
+    }
+  }
+  &__btn {
+    background-color: #f1f7fd;
+    color: rgb(37, 37, 37);
+    border: 1px solid #6c757d;
+    margin-top: 20px;
+    width: 100%;
+    &:hover {
+      border: 1px solid #6c757d;
+      background-color: #e2e8ee;
+    }
+  }
+}
