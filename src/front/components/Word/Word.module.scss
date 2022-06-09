@@ -27,6 +27,31 @@
     padding-bottom: 5px;
   }
 
+  .word__head_delete {
+    &:hover {
+      color: blue;
+    }
+    &::after {
+      content: "\270E";
+      font-size: 20px;
+    }
+  }
+
+  .word__head_config {
+    &:hover {
+      color: red;
+    }
+    &::after {
+      content: "\2715";
+      font-size: 20px;
+    }
+  }
+
+  .word__head_config,
+  .word__head_delete {
+    cursor: pointer;
+  }
+
   .word__head_created {
   }
 }
