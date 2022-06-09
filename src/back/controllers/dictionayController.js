@@ -4,7 +4,7 @@ const getAllWords = async (req, res) => {
   const { alphabet, _offset } = req.query;
   try {
     const allWords = await dictionaryService.getAllWords({ alphabet, _offset });
-    res.set("x-content", allWords.totalRows.length);
+    res.set("x-content", allWords?.totalRows.length);
     res.json({ status: "OK", data: allWords.rows });
   } catch (error) {
     res.status(error?.status || 500).send({
