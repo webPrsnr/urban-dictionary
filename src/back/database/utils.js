@@ -34,14 +34,14 @@ const getAllWords = (filterParam) => {
   }
   return new Promise((res, rej) => {
     const GET_ALL_WORDS = `SELECT * FROM words`;
-    db.all(GET_ALL_WORDS, (err, rows) => {
+    db.all(GET_ALL_WORDS, (err, totalRows) => {
       if (err) {
         rej({
           status: 500,
           message: err,
         });
       }
-      res(rows);
+      res({ totalRows });
     });
   });
 };
