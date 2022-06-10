@@ -56,7 +56,7 @@ const Word = ({ item }) => {
         {editSwtich ? (
           <DeleteWord name={item.word_name} id={item.id} />
         ) : (
-          <EditWord />
+          <EditWord item={item} />
         )}
       </Modal>
     </div>

@@ -1,0 +1,48 @@
+.edit {
+  font-family: "Roboto", sans-serif;
+  width: 600px;
+  form {
+    width: 100%;
+  }
+
+  &__head {
+    border-bottom: 2px solid;
+    text-transform: uppercase;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+  }
+  &__err {
+    color: rgb(216, 111, 111);
+    font-size: 10px;
+  }
+}
+
+input[type="text"],
+textarea[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  width: 100%;
+  background-color: #e2e8ee;
+  color: rgb(37, 37, 37);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    border: 1px solid #6c757d;
+    background-color: #e2e8ee;
+  }
+}
