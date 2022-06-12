@@ -41,7 +41,7 @@ const getAllWords = (filterParam) => {
           message: err,
         });
       }
-      res({ totalRows });
+      res({ totalRows, rows: totalRows });
     });
   });
 };

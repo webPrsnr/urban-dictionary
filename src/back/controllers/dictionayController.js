@@ -3,9 +3,12 @@ const dictionaryService = require("../services/dictionaryService");
 const getAllWords = async (req, res) => {
   const { alphabet, _offset } = req.query;
   try {
-    const allWords = await dictionaryService.getAllWords({ alphabet, _offset });
-    res.set("x-content", allWords?.totalRows.length);
-    res.json({ status: "OK", data: allWords.rows });
+    const { totalRows, rows } = await dictionaryService.getAllWords({
+      alphabet,
+      _offset,
+    });
+    res.set("x-content", totalRows.length);
+    res.json({ status: "OK", data: rows });
   } catch (error) {
     res.status(error?.status || 500).send({
       status: "FAILED",
