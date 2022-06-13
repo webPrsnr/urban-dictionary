@@ -21,7 +21,7 @@ $hooverColor: #0345bf;
   flex-direction: column;
   flex: 0.5;
   .header__logo_title {
-    font-family: "Roboto", sans-serif;
+    @include mainFont;
   }
   .header__logo_subtitle {
     text-transform: uppercase;
@@ -30,7 +30,7 @@ $hooverColor: #0345bf;
 }
 
 .header__nav {
-  font-family: "Roboto", sans-serif;
+  @include mainFont;
   .header__list {
     display: flex;
     list-style-type: none;

@@ -12,6 +12,7 @@
   border: 1px solid $mainBlack;
   border-radius: 0;
   box-shadow: 40px -16px $secWhite;
+  @include mainFont;
 }
 
 .word__wrapper {

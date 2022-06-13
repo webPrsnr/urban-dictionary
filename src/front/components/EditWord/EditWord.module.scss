@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 .edit {
-  font-family: "Roboto", sans-serif;
+  @include mainFont;
   width: 600px;
   form {
     width: 100%;

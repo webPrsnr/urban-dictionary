@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .delete {
-  font-family: "Roboto", sans-serif;
+  @include mainFont;
   &__head {
     @include config-underline-head;
   }

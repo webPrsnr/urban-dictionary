@@ -5,7 +5,7 @@ footer {
   padding-top: 5px;
   padding-bottom: 5px;
   color: $mainWhite;
-  font-family: "Roboto", sans-serif;
+  @include mainFont;
   text-align: center;
   font-size: 12px;
 

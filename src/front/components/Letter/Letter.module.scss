@@ -5,7 +5,7 @@
 }
 
 .letter_paragraph {
-  font-family: "Roboto", sans-serif;
+  @include mainFont;
   color: $mainBlack;
   &:hover {
     text-decoration: underline;
