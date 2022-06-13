@@ -1,4 +1,6 @@
-![Logo](/__assets/logo.png#center){ width="377" height="100" style="display: block; margin: 0 auto" }
+<p align="center">
+  <img width="377" height="100" src="/__assets/logo.png">
+</p>
 
 # [WIP]urban-dictionary
 
