@@ -1,7 +1,4 @@
-$logoColor: #6c757d;
-$textColor: rgb(37, 37, 37);
-$greenColor: #f1f7fd;
-$whiteColor: #e2e8ee;
+@import "../../styles/variables.scss";
 
 .home_outer {
   padding-top: 60px;
@@ -13,13 +10,11 @@ $whiteColor: #e2e8ee;
   max-width: 1140px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
-  color: $textColor;
+  color: $mainBlack;
 }
 
 .welcome {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include display-flex;
 }
 
 .welcome__welcome-words {
@@ -27,7 +22,7 @@ $whiteColor: #e2e8ee;
 }
 
 .welcome__logo {
-  color: $logoColor;
+  color: $mainGray;
 }
 
 .welcome__descr {
@@ -52,7 +47,6 @@ $whiteColor: #e2e8ee;
 }
 
 .form {
-  // font-family: "Roboto", sans-serif;
   height: 30px;
   width: 100%;
 
@@ -75,17 +69,15 @@ $whiteColor: #e2e8ee;
     float: left;
     &:focus {
       outline: none;
-      border: 1px solid $logoColor;
+      border: 1px solid $mainGray;
     }
   }
 
   .search_button {
-    // font-family: "Roboto", sans-serif;
     width: 20%;
-    border: 1px solid $logoColor;
+    border: 1px solid $mainGray;
     border-radius: 0 2px 2px 0;
-    // background: url("./images/search_w.png") center center no-repeat;
-    background-color: $greenColor;
+    background-color: $secWhite;
     float: right;
     position: relative;
     left: -2px;
@@ -96,14 +88,14 @@ $whiteColor: #e2e8ee;
     }
 
     &:hover {
-      border: 1px solid $logoColor;
-      background-color: $whiteColor;
+      border: 1px solid $mainGray;
+      background-color: $secWhite;
     }
 
     &:active {
       outline: none;
-      border: 1px solid $logoColor;
-      background-color: $whiteColor;
+      border: 1px solid $mainGray;
+      background-color: $secWhite;
     }
   }
 }
