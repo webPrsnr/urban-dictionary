@@ -16,3 +16,10 @@ $mainBlack: rgb(37, 37, 37);
     background-color: #e2e8ee;
   }
 }
+
+// edit/delete underline
+
+@mixin config-underline-head {
+  border-bottom: 2px solid;
+  text-transform: uppercase;
+}
