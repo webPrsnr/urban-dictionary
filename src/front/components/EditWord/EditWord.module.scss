@@ -7,8 +7,7 @@
   }
 
   &__head {
-    border-bottom: 2px solid;
-    text-transform: uppercase;
+    @include config-underline-head;
   }
   &__info {
     display: flex;
