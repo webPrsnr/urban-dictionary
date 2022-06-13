@@ -3,7 +3,19 @@ $mainGray: #394551;
 $mainWhite: rgb(162, 162, 162);
 $secWhite: #f1f7fd;
 
-// edit/delete btn
+// [common]
+
+// __display-flex
+
+@mixin display-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// [edit/delete]
+
+// __btn
 
 @mixin large-btn {
   width: 100%;
@@ -20,14 +32,14 @@ $secWhite: #f1f7fd;
   }
 }
 
-// edit/delete underline
+// __underline
 
 @mixin config-underline-head {
   border-bottom: 2px solid;
   text-transform: uppercase;
 }
 
-// edit/delete info
+// __info
 
 @mixin config-info {
   display: flex;
