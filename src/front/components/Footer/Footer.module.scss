@@ -1,17 +1,16 @@
-$footerColor: #394551;
-$footerFontColor: rgb(162, 162, 162);
+@import "../../styles/variables.scss";
 
 footer {
-  background-color: $footerColor;
+  background-color: $mainGray;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: $footerFontColor;
+  color: $mainWhite;
   font-family: "Roboto", sans-serif;
   text-align: center;
   font-size: 12px;
 
   a {
-    color: $footerFontColor;
+    color: $mainWhite;
     &:hover {
       color: #fff;
     }
