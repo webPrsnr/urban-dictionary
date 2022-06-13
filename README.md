@@ -15,6 +15,10 @@ urban-dictionary - это аналог англоязычного сервиса
 - отдельная вкладка для каждого слова `/words/id` - где id - идентификатор слова
 - на вкладке присутствуют меню по удалению, либо редактированию искомого слова
 
+<p align="center">
+  <img width="948" height="688" src="/__assets/peek.gif">
+</p>
+
 ## available endpoints
 
 | actions                                                                                                                      |
