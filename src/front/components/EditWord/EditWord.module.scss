@@ -10,11 +10,7 @@
     @include config-underline-head;
   }
   &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+    @include config-info;
   }
   &__err {
     color: rgb(216, 111, 111);

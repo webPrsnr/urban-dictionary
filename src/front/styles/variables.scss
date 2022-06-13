@@ -23,3 +23,13 @@ $mainBlack: rgb(37, 37, 37);
   border-bottom: 2px solid;
   text-transform: uppercase;
 }
+
+// edit/delete info
+
+@mixin config-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}

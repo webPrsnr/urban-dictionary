@@ -6,11 +6,7 @@
     @include config-underline-head;
   }
   &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
+    @include config-info;
   }
   &__descr {
     margin: 8px 0;
