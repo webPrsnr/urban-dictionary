@@ -1,5 +1,4 @@
-$letterColor: rgb(37, 37, 37);
-$hooverColor: #4caf50;
+@import "../../styles/variables.scss";
 
 .letter_link {
   text-align: center;
@@ -7,10 +6,10 @@ $hooverColor: #4caf50;
 
 .letter_paragraph {
   font-family: "Roboto", sans-serif;
-  color: $letterColor;
+  color: $mainBlack;
   &:hover {
     text-decoration: underline;
-    color: $hooverColor;
+    color: $thirdColor;
     cursor: pointer;
   }
 }
