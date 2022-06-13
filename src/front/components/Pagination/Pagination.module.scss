@@ -1,9 +1,7 @@
-$activeColor: #4caf50;
+@import "../../styles/variables.scss";
 
 .page_item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display-flex;
   list-style-type: none;
   cursor: pointer;
 }
@@ -12,16 +10,16 @@ $activeColor: #4caf50;
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
-  border: 1px solid #ddd;
+  border: 1px solid $mainWhite;
   margin: 0 4px;
 
   &:hover:not(.page_active) {
-    background-color: #ddd;
+    background-color: $mainWhite;
   }
 }
 
 .page_active {
-  background-color: #4caf50;
-  color: white;
-  border: 1px solid #4caf50;
+  background-color: $thirdColor;
+  color: $secWhite;
+  border: 1px solid $thirdColor;
 }
