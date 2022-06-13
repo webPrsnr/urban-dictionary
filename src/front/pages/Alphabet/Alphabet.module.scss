@@ -1,5 +1,5 @@
+@import "../../styles/variables.scss";
 $wrapperWidth: 1000px;
-$fontColor: rgb(37, 37, 37);
 $letterColor: #6c757d;
 
 .wrapper_outer {
@@ -14,7 +14,7 @@ $letterColor: #6c757d;
 }
 
 .letters_block {
-  color: $fontColor;
+  color: $mainBlack;
   font-family: "Roboto", sans-serif;
 
   & span {
