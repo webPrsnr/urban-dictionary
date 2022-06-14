@@ -14,6 +14,10 @@ $thirdColor: #4caf50;
   align-items: center;
 }
 
+@mixin mainFont {
+  font-family: "Roboto", sans-serif;
+}
+
 // [edit/delete]
 
 // __btn
