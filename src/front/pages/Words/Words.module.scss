@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+
+.wrapper_outer {
+  @include wrapper-outer;
+  @include mainFont;
+}
+
+.wrapper_inner {
+  @include wrapper-inner;
+}
