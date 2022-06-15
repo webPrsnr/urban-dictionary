@@ -5,7 +5,7 @@ const getAllWords = async (filterParam) => {
   const { alphabet, _offset } = filterParam;
   try {
     if (alphabet && _offset) {
-      const wordsByLetter = await DbUtils.dbAll(queries.GET_WORDS_BY, [
+      const totalCount = await DbUtils.dbAll(queries.GET_WORDS_BY, [
         alphabet + "%",
       ]);
       const allWords = await DbUtils.dbAll(queries.GET_WORDS_LIMIT, [
@@ -13,18 +13,18 @@ const getAllWords = async (filterParam) => {
         12,
         _offset,
       ]);
-      return { allWords, wordsByLetter };
+      return { allWords, totalCount };
     }
     if (!alphabet && _offset) {
-      const wordsByLetter = await DbUtils.dbAll(queries.GET_ALL_WORDS);
+      const totalCount = await DbUtils.dbAll(queries.GET_ALL_WORDS);
       const allWords = await DbUtils.dbAll(queries.GET_ALL_WORDS_LIMIT, [
         12,
         _offset,
       ]);
-      return { allWords, wordsByLetter };
+      return { allWords, totalCount };
     }
     const allWords = await DbUtils.dbAll(queries.GET_ALL_WORDS);
-    return { allWords, wordsByLetter: allWords };
+    return { allWords, totalCount: allWords };
   } catch (err) {
     throw err;
   }
