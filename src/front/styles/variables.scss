@@ -4,7 +4,24 @@ $mainWhite: rgb(162, 162, 162);
 $secWhite: #f1f7fd;
 $thirdColor: #4caf50;
 
+$maxWidth: 1000px;
+
 // [common]
+
+// __wrapper-outer
+
+@mixin wrapper-outer {
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+// __wrapper-inner
+
+@mixin wrapper-inner {
+  max-width: $maxWidth;
+  margin: 0 auto;
+}
 
 // __display-flex
 
