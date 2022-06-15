@@ -15,6 +15,14 @@ const getAllWords = async (filterParam) => {
       ]);
       return { allWords, wordsByLetter };
     }
+    if (!alphabet && _offset) {
+      const wordsByLetter = await DbUtils.dbAll(queries.GET_ALL_WORDS);
+      const allWords = await DbUtils.dbAll(queries.GET_ALL_WORDS_LIMIT, [
+        12,
+        _offset,
+      ]);
+      return { allWords, wordsByLetter };
+    }
     const allWords = await DbUtils.dbAll(queries.GET_ALL_WORDS);
     return { allWords, wordsByLetter: allWords };
   } catch (err) {
