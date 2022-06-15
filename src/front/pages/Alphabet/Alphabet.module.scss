@@ -1,21 +1,17 @@
 @import "../../styles/variables.scss";
-$wrapperWidth: 1000px;
 $letterColor: #6c757d;
 
 .wrapper_outer {
-  padding-top: 50px;
-  padding-left: 70px;
-  padding-right: 70px;
+  @include wrapper_outer;
+  @include mainFont;
 }
 
 .wrapper_inner {
-  max-width: $wrapperWidth;
-  margin: 0 auto;
+  @include wrapper-inner;
 }
 
 .letters_block {
   color: $mainBlack;
-  font-family: "Roboto", sans-serif;
 
   & span {
     color: $letterColor;
