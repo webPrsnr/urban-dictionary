@@ -1,4 +1,12 @@
 const db = require("../../../db_init");
+const queries = require("./queries");
+
+const limitList = {
+  alphab_inc: { order_by: "word_name", flag: "ASC" },
+  alphab_dec: { order_by: "word_name", flag: "DESC" },
+  date_new: { order_by: "updated_at", flag: "DESC" },
+  date_old: { order_by: "updated_at", flag: "ASC" },
+};
 
 const dbAll = (sql, values) => {
   return new Promise((res, rej) => {
@@ -20,7 +28,17 @@ const dbRun = (sql, values) => {
   });
 };
 
+const getSorted = (sortFlag) => {
+  if (limitList[sortFlag] === undefined)
+    return queries.GET_ALL_WORDS_LIMIT_ORDER;
+  return queries.GET_ALL_WORDS_LIMIT_ORDER.replace(
+    "word_name",
+    limitList[sortFlag].order_by
+  ).replace("DESC", limitList[sortFlag].flag);
+};
+
 module.exports = {
   dbAll,
   dbRun,
+  getSorted,
 };
