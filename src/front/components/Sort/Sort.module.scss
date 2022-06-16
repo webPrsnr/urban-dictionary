@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+.sort {
+  position: relative;
+  .sort__label {
+    display: flex;
+    p {
+      margin-right: 5px;
+    }
+    .sort__by {
+      border-bottom: 1px dashed $thirdColor;
+      color: $thirdColor;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+  .sort__popup {
+    position: absolute;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.09);
+    right: 0;
+    background-color: #fff;
+    z-index: 99;
+    .sort__list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        padding: 12px 25px;
+        cursor: pointer;
+        &:hover {
+          background-color: $secWhite;
+        }
+      }
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+}
