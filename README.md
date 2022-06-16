@@ -16,23 +16,28 @@ urban-dictionary - это аналог англоязычного сервиса
 - на вкладке присутствуют меню по удалению, либо редактированию искомого слова
 
 <p align="center">
-  <img width="948" height="688" src="/__assets/peek.gif">
+  <img width="951" height="688" src="/__assets/peek.gif">
 </p>
 
 ## available endpoints
 
-| actions                                                                                                                      |
-| ---------------------------------------------------------------------------------------------------------------------------- |
-| [GET http://localhost:8080/api/v1/words](http://localhost:8080/api/v1/words)                                                 |
-| [GET http://localhost:8080/api/v1/words/:wordId](http://localhost:8080/api/v1/words/0278ce0d-c06e-429a-9fba-d22f4b315e96)    |
+| actions                                                                                                                      | uri filters's                                                                                                                                                   |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [GET http://localhost:8080/api/v1/words](http://localhost:8080/api/v1/words)                                                 | [GET http://localhost:8080/api/v1/words?alphabet=?&\_offset=?](http://localhost:8080/api/v1/words?alphabet=Д&_offset=0) find all words starting with the letter |
+| [GET http://localhost:8080/api/v1/words/:wordId](http://localhost:8080/api/v1/words/0278ce0d-c06e-429a-9fba-d22f4b315e96)    | [GET http://localhost:8080/api/v1/words?sort=?&\_offset=?](http://localhost:8080/api/v1/words?alphabet=Д&_offset=0) output of all sorted words                  |
 | [POST http://localhost:8080/api/v1/words](http://localhost:8080/api/v1/words)                                                |
 | [PATCH http://localhost:8080/api/v1/words/:wordId](http://localhost:8080/api/v1/words/0278ce0d-c06e-429a-9fba-d22f4b315e96)  |
 | [DELETE http://localhost:8080/api/v1/words/:wordId](http://localhost:8080/api/v1/words/0278ce0d-c06e-429a-9fba-d22f4b315e96) |
 
+| uri filter's                                                                                                            | description                             |
+| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
+| [GET http://localhost:8080/api/v1/words?alphabet=N&\_offset=N](http://localhost:8080/api/v1/words?alphabet=Д&_offset=0) | find all words starting with the letter |
+|                                                                                                                         |
+
 ## todo
 
 - кастомные хуки по запросу на сервер - front
-- `/words` - показ всех существующих слов в БД с учетом пагинации -front
+- ~~`/words` - показ всех существующих слов в БД с учетом пагинации -front~~
 - поиск нужного слова в `/words` - front, back
 - поиск нужного слова в `/home` с последующим редиректом на `/words`- front
 - меню создания нового слова в `/words` - front
