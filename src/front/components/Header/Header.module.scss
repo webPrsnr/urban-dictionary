@@ -64,6 +64,7 @@ $hooverColor: #0345bf;
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid $mainBlack;
+  z-index: 100;
 
   .header__alphabet {
     list-style-type: none;
