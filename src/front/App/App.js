@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "../Layout/Layout";
-import Home from "../../pages/Home/Home";
-import Words from "../../pages/Words/Words";
-import BrowseWords from "../../pages/BrowseWords/BrowseWords";
-import { Alphabet } from "../../pages/Alphabet/Alphabet";
-import WordPage from "../../pages/WordPage/WordPage";
+import Layout from "../components/Layout/Layout";
+import Home from "../pages/Home/Home";
+import Words from "../pages/Words/Words";
+// import BrowseWords from "../pages/BrowseWords/BrowseWords";
+import { Alphabet } from "../pages/Alphabet/Alphabet";
+import WordPage from "../pages/WordPage/WordPage";
 
 const App = () => {
   return (
