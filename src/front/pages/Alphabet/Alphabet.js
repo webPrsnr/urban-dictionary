@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { API } from "../../api/api";
 import LetterList from "../../components/LetterList/LetterList";
 import Pagination from "../../components/Pagination/Pagination";
 import styles from "./Alphabet.module.scss";
@@ -21,12 +22,12 @@ const Alphabet = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(
-        `http://localhost:8080/api/v1/words?alphabet=${alphabet.toLowerCase()}&_offset=${itemOffset}`
+      const data = await API.get(
+        `words?alphabet=${alphabet.toLowerCase()}&_offset=${itemOffset}`,
+        { headerInfo: true }
       );
-      const data = await response.json();
-      setWords(data.data);
-      setPageCount(Math.ceil(response.headers.get("x-content") / 12));
+      setWords(data.records);
+      setPageCount(Math.ceil(data.recordsLength / 12));
     }
     fetchData();
   }, [itemOffset, alphabet]);

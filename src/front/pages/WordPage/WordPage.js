@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { API } from "../../api/api";
 import Word from "../../components/Word/Word";
 
 const WordPage = () => {
@@ -8,9 +9,11 @@ const WordPage = () => {
 
   useEffect(() => {
     (async function fetchData() {
-      const response = await fetch(`http://localhost:8080/api/v1/words/${id}`);
-      const data = await response.json();
-      setWord(data.data);
+      // const response = await fetch(`words/${id}`);
+      // const data = await response.json();
+      const data = await API.get(`words/${id}`);
+      // console.log(data);
+      setWord(data);
     })();
   }, []);
 

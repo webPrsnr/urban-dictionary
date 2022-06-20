@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { API } from "../../api/api";
 import LetterList from "../../components/LetterList/LetterList";
 import Pagination from "../../components/Pagination/Pagination";
 import Sort from "../../components/Sort/Sort";
@@ -17,13 +18,12 @@ const Words = () => {
 
   useEffect(() => {
     (async function fetchData() {
-      const response = await fetch(
-        `http://localhost:8080/api/v1/words/?sort=${sortFlag}&_offset=${itemOffset}`
+      const data = await API.get(
+        `words?sort=${sortFlag}&_offset=${itemOffset}`,
+        { headerInfo: true }
       );
-      const json = await response.json();
-      setWords(json.data);
-
-      setPageCount(Math.ceil(response.headers.get("x-content") / 12));
+      setWords(data.records);
+      setPageCount(Math.ceil(data.recordsLength / 12));
     })();
   }, [itemOffset, sortFlag]);
 
