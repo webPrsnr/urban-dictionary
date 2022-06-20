@@ -1,6 +1,7 @@
 import styles from "./EditWord.module.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { API } from "../../api/api";
 
 const EditWord = ({ item }) => {
   const navigate = useNavigate();
@@ -18,26 +19,12 @@ const EditWord = ({ item }) => {
     },
   });
 
-  const updateById = (data) => {
-    fetch(`http://localhost:8080/api/v1/words/${item.id}`, {
-      method: "PATCH",
-      body: JSON.stringify({
-        word_name: data.wordName,
-        mean: data.wordMean,
-        description: data.wordDescr,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === "OK") {
-          reset();
-          navigate(-1);
-        }
-      })
-      .catch((err) => console.log(err));
+  const updateById = async (records) => {
+    const data = await API.patch(`words/${item.id}`, records);
+    if (data.status === "OK") {
+      reset();
+      navigate(-1);
+    }
   };
 
   const onSubmit = (data) => {
