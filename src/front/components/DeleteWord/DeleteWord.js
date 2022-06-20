@@ -1,20 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
+import { API } from "../../api/api";
 import styles from "./DeleteWord.module.scss";
 
 const DeleteWord = ({ name, id }) => {
   const navigate = useNavigate();
-  const deleteWordById = () => {
-    fetch(`http://localhost:8080/api/v1/words/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.status === "OK") {
-          // TODO: <Link> with state to show notification
-          navigate(-1);
-        }
-      })
-      .catch((err) => console.log(err));
+  const deleteWordById = async () => {
+    const data = await API.delete(`words/${id}`);
+    if (data.status == "OK") navigate(-1);
   };
   return (
     <div className={styles.delete}>
