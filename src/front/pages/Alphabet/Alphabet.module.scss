@@ -1,17 +1,17 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 $letterColor: #6c757d;
 
 .wrapper_outer {
-  @include wrapper_outer;
-  @include mainFont;
+  @include forwarded.wrapper_outer();
+  @include forwarded.mainFont();
 }
 
 .wrapper_inner {
-  @include wrapper-inner;
+  @include forwarded.wrapper-inner();
 }
 
 .letters_block {
-  color: $mainBlack;
+  color: forwarded.$mainBlack;
 
   & span {
     color: $letterColor;

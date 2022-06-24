@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 .sort {
   position: relative;
   .sort__label {
@@ -7,8 +7,8 @@
       margin-right: 5px;
     }
     .sort__by {
-      border-bottom: 1px dashed $thirdColor;
-      color: $thirdColor;
+      border-bottom: 1px dashed forwarded.$thirdColor;
+      color: forwarded.$thirdColor;
       letter-spacing: 1px;
       cursor: pointer;
     }
@@ -27,7 +27,7 @@
         padding: 12px 25px;
         cursor: pointer;
         &:hover {
-          background-color: $secWhite;
+          background-color: forwarded.$secWhite;
         }
       }
     }

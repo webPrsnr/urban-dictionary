@@ -1,12 +1,12 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 
 .delete {
-  @include mainFont;
+  @include forwarded.mainFont();
   &__head {
-    @include config-underline-head;
+    @include forwarded.config-underline-head();
   }
   &__info {
-    @include config-info;
+    @include forwarded.config-info();
   }
   &__descr {
     margin: 8px 0;
@@ -15,6 +15,6 @@
     }
   }
   &__btn {
-    @include large-btn;
+    @include forwarded.large-btn();
   }
 }

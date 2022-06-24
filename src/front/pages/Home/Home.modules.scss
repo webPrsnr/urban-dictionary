@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 
 .home_outer {
   padding-top: 60px;
@@ -10,11 +10,11 @@
   max-width: 1140px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
-  color: $mainBlack;
+  color: forwarded.$mainBlack;
 }
 
 .welcome {
-  @include display-flex;
+  @include forwarded.display-flex();
 }
 
 .welcome__welcome-words {
@@ -22,7 +22,7 @@
 }
 
 .welcome__logo {
-  color: $mainGray;
+  color: forwarded.$mainGray;
 }
 
 .welcome__descr {
@@ -69,15 +69,15 @@
     float: left;
     &:focus {
       outline: none;
-      border: 1px solid $mainGray;
+      border: 1px solid forwarded.$mainGray;
     }
   }
 
   .search_button {
     width: 20%;
-    border: 1px solid $mainGray;
+    border: 1px solid forwarded.$mainGray;
     border-radius: 0 2px 2px 0;
-    background-color: $secWhite;
+    background-color: forwarded.$secWhite;
     float: right;
     position: relative;
     left: -2px;
@@ -88,14 +88,14 @@
     }
 
     &:hover {
-      border: 1px solid $mainGray;
-      background-color: $secWhite;
+      border: 1px solid forwarded.$mainGray;
+      background-color: forwarded.$secWhite;
     }
 
     &:active {
       outline: none;
-      border: 1px solid $mainGray;
-      background-color: $secWhite;
+      border: 1px solid forwarded.$mainGray;
+      background-color: forwarded.$secWhite;
     }
   }
 }

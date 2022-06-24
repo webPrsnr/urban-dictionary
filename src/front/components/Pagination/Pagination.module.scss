@@ -1,7 +1,7 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 
 .page_item {
-  @include display-flex;
+  @include forwarded.display-flex();
   list-style-type: none;
   cursor: pointer;
 }
@@ -10,16 +10,16 @@
   padding: 8px 16px;
   text-decoration: none;
   transition: background-color 0.3s;
-  border: 1px solid $mainWhite;
+  border: 1px solid forwarded.$mainWhite;
   margin: 0 4px;
 
   &:hover:not(.page_active) {
-    background-color: $mainWhite;
+    background-color: forwarded.$mainWhite;
   }
 }
 
 .page_active {
-  background-color: $thirdColor;
-  color: $secWhite;
-  border: 1px solid $thirdColor;
+  background-color: forwarded.$thirdColor;
+  color: forwarded.$secWhite;
+  border: 1px solid forwarded.$thirdColor;
 }

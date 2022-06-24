@@ -1,12 +1,12 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 
 .wrapper_outer {
-  @include wrapper-outer;
-  @include mainFont;
+  @include forwarded.wrapper-outer();
+  @include forwarded.mainFont();
 }
 
 .wrapper_inner {
-  @include wrapper-inner;
+  @include forwarded.wrapper-inner();
 }
 
 .head_container {

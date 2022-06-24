@@ -1,15 +1,15 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 
 .letter_link {
   text-align: center;
 }
 
 .letter_paragraph {
-  @include mainFont;
-  color: $mainBlack;
+  @include forwarded.mainFont();
+  color: forwarded.$mainBlack;
   &:hover {
     text-decoration: underline;
-    color: $thirdColor;
+    color: forwarded.$thirdColor;
     cursor: pointer;
   }
 }

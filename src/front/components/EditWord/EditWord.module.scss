@@ -1,16 +1,16 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 .edit {
-  @include mainFont;
+  @include forwarded.mainFont();
   width: 600px;
   form {
     width: 100%;
   }
 
   &__head {
-    @include config-underline-head;
+    @include forwarded.config-underline-head();
   }
   &__info {
-    @include config-info;
+    @include forwarded.config-info();
   }
   &__err {
     color: rgb(216, 111, 111);
@@ -29,5 +29,5 @@ textarea[type="text"] {
   box-sizing: border-box;
 }
 input[type="submit"] {
-  @include large-btn;
+  @include forwarded.large-btn();
 }

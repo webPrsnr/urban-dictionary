@@ -1,19 +1,17 @@
-@import "../../styles/variables.scss";
+@use "../../styles/forwarded.scss";
 $hooverColor: #0345bf;
 
 .header_outer_block {
   padding-right: 60px;
   padding-left: 60px;
-  // padding-top: 20px;
-  // padding-bottom: 20px;
-  background-color: $secWhite;
+  background-color: forwarded.$secWhite;
 }
 
 .header_inner_block {
   max-width: 1140px;
-  @include display-flex;
+  @include forwarded.display-flex();
   margin: 0 auto;
-  color: $mainBlack;
+  color: forwarded.$mainBlack;
 }
 
 .header__logo {
@@ -21,7 +19,7 @@ $hooverColor: #0345bf;
   flex-direction: column;
   flex: 0.5;
   .header__logo_title {
-    @include mainFont;
+    @include forwarded.mainFont();
   }
   .header__logo_subtitle {
     text-transform: uppercase;
@@ -30,7 +28,7 @@ $hooverColor: #0345bf;
 }
 
 .header__nav {
-  @include mainFont;
+  @include forwarded.mainFont();
   .header__list {
     display: flex;
     list-style-type: none;
@@ -49,7 +47,7 @@ $hooverColor: #0345bf;
     }
 
     .header__link {
-      color: $mainBlack;
+      color: forwarded.$mainBlack;
       &:hover {
         color: $hooverColor;
       }
@@ -63,7 +61,7 @@ $hooverColor: #0345bf;
   width: 250px;
   background-color: #fff;
   border-radius: 5px;
-  border: 1px solid $mainBlack;
+  border: 1px solid forwarded.$mainBlack;
   z-index: 100;
 
   .header__alphabet {
@@ -76,15 +74,15 @@ $hooverColor: #0345bf;
 }
 
 .alphabet__link {
-  background-color: $secWhite;
+  background-color: forwarded.$secWhite;
   height: 2.5rem;
   width: 2.5rem;
-  @include display-flex;
+  @include forwarded.display-flex();
   border-radius: 50%;
 }
 
 .active_link {
-  border-bottom: 2px solid $mainBlack;
+  border-bottom: 2px solid forwarded.$mainBlack;
   color: $hooverColor;
 }
 
