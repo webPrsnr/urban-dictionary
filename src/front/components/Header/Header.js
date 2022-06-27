@@ -3,6 +3,7 @@ import { NavLink, Link } from "react-router-dom";
 import styles from "./Header.module.scss";
 import { useState } from "react";
 import alphabet from "./alphabet";
+import Theme from "../Theme/Theme";
 
 const Header = () => {
   const [dropDownFlag, setDropDownFlag] = useState(false);
@@ -56,6 +57,9 @@ const Header = () => {
                 <NavLink className={setActive} to="/words">
                   Words
                 </NavLink>
+              </li>
+              <li className={styles.header__list_el}>
+                <Theme />
               </li>
             </ul>
           </nav>
