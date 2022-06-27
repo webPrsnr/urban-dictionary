@@ -38,7 +38,11 @@ const Alphabet = () => {
         <h1 className={styles.letters_block}>
           Все слова на букву <span>{alphabet}</span>
         </h1>
-        {words.length ? <LetterList letters={words} /> : <h2>Слов нету</h2>}
+        {words.length ? (
+          <LetterList letters={words} />
+        ) : (
+          <h2 className={styles.letters_empty}>Слов нету</h2>
+        )}
       </div>
       <Pagination handlePageClick={handlePageClick} pageCount={pageCount} />
     </div>
