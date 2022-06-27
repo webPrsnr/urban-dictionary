@@ -10,7 +10,7 @@
   max-width: 1140px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
-  color: forwarded.$mainBlack;
+  color: var(--mainBlack);
 }
 
 .welcome {
@@ -22,7 +22,7 @@
 }
 
 .welcome__logo {
-  color: forwarded.$mainGray;
+  color: var(--mainGray);
 }
 
 .welcome__descr {
@@ -59,7 +59,9 @@
 
   .search_form {
     width: 80%;
-    border: 1px solid #ccc;
+    border: 1px solid var(--mainBlack);
+    color: var(--mainGray);
+    background-color: var(--secWhite);
     border-right: none;
     border-radius: 2px 0 0 2px;
     box-shadow: 0 1px 0 hsla(210, 65%, 9%, 0.02) inset,
@@ -69,15 +71,15 @@
     float: left;
     &:focus {
       outline: none;
-      border: 1px solid forwarded.$mainGray;
+      border: 1px solid var(--mainGray);
     }
   }
 
   .search_button {
     width: 20%;
-    border: 1px solid forwarded.$mainGray;
+    border: 1px solid var(--mainGray);
     border-radius: 0 2px 2px 0;
-    background-color: forwarded.$secWhite;
+    background-color: var(--secWhite);
     float: right;
     position: relative;
     left: -2px;
@@ -88,14 +90,14 @@
     }
 
     &:hover {
-      border: 1px solid forwarded.$mainGray;
-      background-color: forwarded.$secWhite;
+      border: 1px solid var(--mainGray);
+      background-color: var(--secWhite);
     }
 
     &:active {
       outline: none;
-      border: 1px solid forwarded.$mainGray;
-      background-color: forwarded.$secWhite;
+      border: 1px solid var(--mainGray);
+      background-color: var(--secWhite);
     }
   }
 }

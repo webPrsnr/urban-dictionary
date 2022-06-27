@@ -1,0 +1,23 @@
+:root[data-theme="light"] {
+  --mainBlack: #252525;
+  --mainGray: #394551;
+  --mainWhite: rgb(162, 162, 162);
+  --secWhite: #f1f7fd;
+  --thirdColor: #4caf50;
+  --background-color: #fff;
+  --hoverColor: #0345bf;
+}
+
+:root[data-theme="dark"] {
+  --background-color: #041c32;
+  --mainBlack: #ecb365;
+  --mainGray: #a27b5c;
+  --mainWhite: #ecb365;
+  --secWhite: #04293a;
+  --thirdColor: #816797;
+  --hoverColor: #c69b7b;
+}
+
+body {
+  background: var(--background-color);
+}

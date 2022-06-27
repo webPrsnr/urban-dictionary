@@ -5,10 +5,11 @@
     display: flex;
     p {
       margin-right: 5px;
+      color: var(--mainBlack);
     }
     .sort__by {
-      border-bottom: 1px dashed forwarded.$thirdColor;
-      color: forwarded.$thirdColor;
+      border-bottom: 1px dashed var(--thirdColor);
+      color: var(--thirdColor);
       letter-spacing: 1px;
       cursor: pointer;
     }
@@ -27,7 +28,7 @@
         padding: 12px 25px;
         cursor: pointer;
         &:hover {
-          background-color: forwarded.$secWhite;
+          background-color: var(--secWhite);
         }
       }
     }

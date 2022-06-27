@@ -6,10 +6,10 @@
 
 .letter_paragraph {
   @include forwarded.mainFont();
-  color: forwarded.$mainBlack;
+  color: var(--mainBlack);
   &:hover {
     text-decoration: underline;
-    color: forwarded.$thirdColor;
+    color: var(--thirdColor);
     cursor: pointer;
   }
 }

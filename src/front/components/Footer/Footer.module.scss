@@ -1,16 +1,16 @@
 @use "../../styles/forwarded.scss";
 
 footer {
-  background-color: forwarded.$mainGray;
+  background-color: var(--secWhite);
   padding-top: 5px;
   padding-bottom: 5px;
-  color: forwarded.$mainWhite;
+  color: var(--mainWhite);
   @include forwarded.mainFont();
   text-align: center;
   font-size: 12px;
 
   a {
-    color: forwarded.$mainWhite;
+    color: var(--mainWhite);
     &:hover {
       color: #fff;
     }

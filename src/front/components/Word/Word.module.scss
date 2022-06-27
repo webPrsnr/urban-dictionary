@@ -9,14 +9,15 @@
 .word__inner {
   margin: 0 auto;
   max-width: 1100px;
-  border: 1px solid forwarded.$mainBlack;
+  border: 1px solid var(--mainBlack);
   border-radius: 0;
-  box-shadow: 40px -16px forwarded.$secWhite;
+  box-shadow: 40px -16px var(--secWhite);
   @include forwarded.mainFont();
 }
 
 .word__wrapper {
   padding: 10px;
+  color: var(--mainBlack);
 }
 
 .word__head {
@@ -24,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid;
-  border-bottom-color: forwarded.$mainBlack;
+  border-bottom-color: var(--mainBlack);
   .word__head_updated {
     padding-bottom: 5px;
   }

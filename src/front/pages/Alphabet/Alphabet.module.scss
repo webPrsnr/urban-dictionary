@@ -10,8 +10,9 @@ $letterColor: #6c757d;
   @include forwarded.wrapper-inner();
 }
 
-.letters_block {
-  color: forwarded.$mainBlack;
+.letters_block,
+.letters_empty {
+  color: var(--mainBlack);
 
   & span {
     color: $letterColor;

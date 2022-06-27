@@ -1,17 +1,16 @@
 @use "../../styles/forwarded.scss";
-$hooverColor: #0345bf;
 
 .header_outer_block {
   padding-right: 60px;
   padding-left: 60px;
-  background-color: forwarded.$secWhite;
+  background-color: var(--secWhite);
 }
 
 .header_inner_block {
   max-width: 1140px;
   @include forwarded.display-flex();
   margin: 0 auto;
-  color: forwarded.$mainBlack;
+  color: var(--mainBlack);
 }
 
 .header__logo {
@@ -47,9 +46,9 @@ $hooverColor: #0345bf;
     }
 
     .header__link {
-      color: forwarded.$mainBlack;
+      color: var(--mainBlack);
       &:hover {
-        color: $hooverColor;
+        color: var(--hoverColor);
       }
     }
   }
@@ -61,7 +60,7 @@ $hooverColor: #0345bf;
   width: 250px;
   background-color: #fff;
   border-radius: 5px;
-  border: 1px solid forwarded.$mainBlack;
+  border: 1px solid var(--mainBlack);
   z-index: 100;
 
   .header__alphabet {
@@ -70,20 +69,22 @@ $hooverColor: #0345bf;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 0.25rem;
+    background-color: var(--background-color);
   }
 }
 
 .alphabet__link {
-  background-color: forwarded.$secWhite;
+  background-color: var(--secWhite);
   height: 2.5rem;
   width: 2.5rem;
   @include forwarded.display-flex();
   border-radius: 50%;
+  color: var(--mainBlack);
 }
 
 .active_link {
-  border-bottom: 2px solid forwarded.$mainBlack;
-  color: $hooverColor;
+  border-bottom: 2px solid var(--mainBlack);
+  color: var(--hoverColor);
 }
 
 .browser_link {

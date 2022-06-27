@@ -9,6 +9,10 @@
   @include forwarded.wrapper-inner();
 }
 
+.letters_block {
+  color: var(--mainBlack);
+}
+
 .head_container {
   display: flex;
   justify-content: space-between;
