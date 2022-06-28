@@ -37,6 +37,7 @@ const EditWord = ({ item }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <label htmlFor="wordName">Слово</label>
           <input
+            className={styles.edit__input}
             id="wordName"
             type="text"
             {...register("wordName", {
@@ -52,6 +53,7 @@ const EditWord = ({ item }) => {
           </div>
           <label htmlFor="wordMean">Значение</label>
           <textarea
+            className={styles.edit__textarea}
             id="wordMean"
             type="text"
             {...register("wordMean", {
@@ -67,6 +69,7 @@ const EditWord = ({ item }) => {
           </div>
           <label htmlFor="wordDescr">Описание</label>
           <textarea
+            className={styles.edit__textarea}
             id="wordDescr"
             type="text"
             {...register("wordDescr", {
