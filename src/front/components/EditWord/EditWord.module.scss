@@ -8,9 +8,13 @@
 
   &__head {
     @include forwarded.config-underline-head();
+    color: var(--mainBlack);
   }
   &__info {
     @include forwarded.config-info();
+    label {
+      color: var(--mainBlack);
+    }
   }
   &__err {
     color: rgb(216, 111, 111);
@@ -18,16 +22,19 @@
   }
 }
 
-input[type="text"],
-textarea[type="text"] {
+.edit__input,
+.edit__textarea {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid var(--mainBlack);
   border-radius: 4px;
   box-sizing: border-box;
+  color: var(--mainBlack);
+  background-color: var(--background-color);
 }
 input[type="submit"] {
   @include forwarded.large-btn();
+  color: var(--mainBlack);
 }

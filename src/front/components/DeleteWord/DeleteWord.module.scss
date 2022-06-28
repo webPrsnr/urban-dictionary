@@ -4,11 +4,13 @@
   @include forwarded.mainFont();
   &__head {
     @include forwarded.config-underline-head();
+    color: var(--mainBlack);
   }
   &__info {
     @include forwarded.config-info();
   }
   &__descr {
+    color: var(--mainBlack);
     margin: 8px 0;
     span {
       text-transform: uppercase;

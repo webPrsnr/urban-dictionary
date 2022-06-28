@@ -79,10 +79,12 @@
     width: 20%;
     border: 1px solid var(--mainGray);
     border-radius: 0 2px 2px 0;
+    color: var(--mainBlack);
     background-color: var(--secWhite);
     float: right;
     position: relative;
     left: -2px;
+    cursor: pointer;
 
     &:hover,
     &:active {
