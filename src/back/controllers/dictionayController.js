@@ -1,12 +1,13 @@
 const dictionaryService = require("../services/dictionaryService");
 
 const getAllWords = async (req, res) => {
-  const { alphabet, _offset, sort } = req.query;
+  const { alphabet, _offset, sort, search } = req.query;
   try {
     const result = await dictionaryService.getAllWords({
       alphabet,
       _offset,
       sort,
+      search,
     });
     res.set("x-content", result.totalCount.length);
     res.json({ status: "OK", data: result.allWords });

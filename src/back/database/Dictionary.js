@@ -2,7 +2,7 @@ const DbUtils = require("./utils");
 const queries = require("./queries");
 
 const getAllWords = async (filterParam) => {
-  const { alphabet, _offset, sort } = filterParam;
+  const { alphabet, _offset, sort, search } = filterParam;
   try {
     if (alphabet && _offset) {
       const totalCount = await DbUtils.dbAll(queries.GET_WORDS_BY, [
@@ -20,6 +20,12 @@ const getAllWords = async (filterParam) => {
       const totalCount = await DbUtils.dbAll(queries.GET_ALL_WORDS);
       const allWords = await DbUtils.dbAll(SQLquery, [12, _offset]);
       return { allWords, totalCount };
+    }
+    if (search) {
+      const allWords = await DbUtils.dbAll(queries.GET_WORDS_BY, [
+        search + "%",
+      ]);
+      return { allWords, totalCount: allWords };
     }
     const allWords = await DbUtils.dbAll(queries.GET_ALL_WORDS);
     return { allWords, totalCount: allWords };
