@@ -3,6 +3,7 @@ import { API } from "../../api/api";
 import LetterList from "../../components/LetterList/LetterList";
 import Pagination from "../../components/Pagination/Pagination";
 import Sort from "../../components/Sort/Sort";
+import Search from "../../components/Search/Search";
 import styles from "./Words.module.scss";
 
 const Words = () => {
@@ -30,6 +31,7 @@ const Words = () => {
   return (
     <div className={styles.wrapper_outer}>
       <div className={styles.wrapper_inner}>
+        <Search />
         <div className={styles.head_container}>
           <h1 className={styles.letters_block}>Все слова</h1>
           <Sort setSortFlag={setSortFlag} />

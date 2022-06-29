@@ -1,4 +1,5 @@
 import React from "react";
+import Search from "../../components/Search/Search";
 import styles from "./Home.modules.scss";
 
 const WELCOME_WORDS = " - словарь по поиску рускоязычных сленговых слов.";
@@ -22,19 +23,7 @@ const Home = () => {
             <img src="https://placekitten.com/450/450" />
           </div>
         </div>
-        <div className={styles.find}>
-          <h2 className={styles.find__title}>Давай найдем...</h2>
-          <form className={styles.form}>
-            <input
-              className={styles.search_form}
-              type="text"
-              placeholder="Введи слово..."
-            />
-            <button className={styles.search_button} type="submit">
-              Найти слово
-            </button>
-          </form>
-        </div>
+        <Search />
       </div>
     </div>
   );
