@@ -14,8 +14,8 @@ const createNewWord = async (newWord) => {
   const wordToInsert = {
     id: uuid(),
     ...newWord,
-    created_at: new Date().toLocaleString(),
-    updated_at: new Date().toLocaleString(),
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   };
   try {
     const createdWord = await Dictionary.createNewWord(wordToInsert);
@@ -37,7 +37,7 @@ const getOneWord = async (wordID) => {
 const updateOneWord = async (id, changes) => {
   const updatedChanges = {
     ...changes,
-    updated_at: new Date().toLocaleString(),
+    updated_at: new Date().toISOString(),
   };
   try {
     const updatedWord = await Dictionary.updateOneWord(id, updatedChanges);
