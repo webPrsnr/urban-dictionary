@@ -17,4 +17,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .button {
+    border: 1px solid var(--mainBlack);
+    padding: 5px;
+    color: var(--mainBlack);
+    background-color: var(--secWhite);
+    cursor: pointer;
+  }
 }
