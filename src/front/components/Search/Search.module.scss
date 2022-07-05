@@ -74,12 +74,19 @@
     color: var(--mainBlack);
   }
   .result__el {
-    margin: 5px 0px;
     border: 1px solid var(--mainGray);
     cursor: pointer;
-    letter-spacing: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     a {
       color: var(--mainBlack);
+      padding: 5px;
+      letter-spacing: normal;
+    }
+    span {
+      background-color: #fc0;
+      letter-spacing: 1px;
     }
   }
 }

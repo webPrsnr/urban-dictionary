@@ -42,7 +42,9 @@ const Search = () => {
         ) : (
           allWords.map((el) => (
             <div key={el.id} className={styles.result__el}>
-              <Link to={`/words/${el.id}`}>{el.word_name}</Link>
+              <Link to={`/words/${el.id}`}>
+                <span>{el.word_name}</span> {el.mean}
+              </Link>
             </div>
           ))
         )}
