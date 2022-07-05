@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const Word = ({ item }) => {
   const transformToDate = (str) => {
-    return str.split(",")[0];
+    return new Date(str).toLocaleDateString();
   };
 
   const [modalFlag, setModalFlag] = useState(false);
