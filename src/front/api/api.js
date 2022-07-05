@@ -15,7 +15,22 @@ export const API = {
       recordsLength: response.headers.get("x-content"),
     };
   },
-  post() {},
+  async post(query, data) {
+    const response = await fetch(CURRENT_URL + query, {
+      method: "POST",
+      body: JSON.stringify({
+        word_name: data.wordName,
+        mean: data.wordMean,
+        description: data.wordDescr,
+        transcription: data.wordName,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    const record = await response.json();
+    return record;
+  },
   async patch(query, data) {
     const response = await fetch(CURRENT_URL + query, {
       method: "PATCH",
