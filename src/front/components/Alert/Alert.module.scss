@@ -1,0 +1,25 @@
+.alert {
+  color: var(--mainBlack);
+  position: absolute;
+  right: 1px;
+  display: flex;
+  align-items: center;
+  padding: 7px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 5px var(--mainWhite);
+  border-left: 5px solid var(--thirdColor);
+  p {
+    padding-right: 30px;
+  }
+  .close {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+    background-color: var(--secWhite);
+  }
+}
