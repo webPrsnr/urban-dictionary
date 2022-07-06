@@ -1,10 +1,13 @@
 import styles from "./EditWord.module.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
+import { changeNotice } from "../../store/noticeSlice";
 import { API } from "../../api/api";
 
 const EditWord = ({ item }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     register,
     formState: { errors },
@@ -23,7 +26,8 @@ const EditWord = ({ item }) => {
     const data = await API.patch(`words/${item.id}`, records);
     if (data.status === "OK") {
       reset();
-      navigate(-1);
+      dispatch(changeNotice(`Вы изменили слово слово: ${item.word_name}`));
+      navigate(`/words`);
     }
   };
 

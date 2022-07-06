@@ -7,6 +7,8 @@ import Search from "../../components/Search/Search";
 import Modal from "../../components/Modal/Modal";
 import styles from "./Words.module.scss";
 import AddWord from "../../components/AddWord/AddWord";
+import Alert from "../../components/Alert/Alert";
+import { useSelector } from "react-redux";
 
 const Words = () => {
   const [words, setWords] = useState([]);
@@ -14,6 +16,7 @@ const Words = () => {
   const [itemOffset, setItemOffset] = useState(0);
   const [sortFlag, setSortFlag] = useState("alphab_inc");
   const [modalFlag, setModalFlag] = useState(false);
+  const noticeFlag = useSelector((state) => state.notice);
 
   const modalSwitch = (status) => {
     setModalFlag(true);
@@ -37,6 +40,7 @@ const Words = () => {
 
   return (
     <>
+      {noticeFlag.status ? <Alert message={noticeFlag.message} /> : ""}
       <div className={styles.wrapper_outer}>
         <div className={styles.wrapper_inner}>
           <Search />

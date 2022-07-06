@@ -1,12 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import { API } from "../../api/api";
 import styles from "./DeleteWord.module.scss";
+import { useDispatch } from "react-redux";
+import { changeNotice } from "../../store/noticeSlice";
 
 const DeleteWord = ({ name, id }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const deleteWordById = async () => {
     const data = await API.delete(`words/${id}`);
-    if (data.status == "OK") navigate(-1);
+    if (data.status == "OK") {
+      dispatch(changeNotice(`Вы удалили слово: ${name}`));
+      navigate("/words");
+    }
   };
   return (
     <div className={styles.delete}>
