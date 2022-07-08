@@ -54,47 +54,7 @@
   }
 }
 
-.header__dropdown {
-  position: absolute;
-  left: 0;
-  width: 250px;
-  background-color: #fff;
-  border-radius: 5px;
-  border: 1px solid var(--mainBlack);
-  z-index: 100;
-
-  .header__alphabet {
-    list-style-type: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.25rem;
-    background-color: var(--background-color);
-  }
-}
-
-.alphabet__link {
-  background-color: var(--secWhite);
-  height: 2.5rem;
-  width: 2.5rem;
-  @include forwarded.display-flex();
-  border-radius: 50%;
-  color: var(--mainBlack);
-}
-
 .active_link {
   border-bottom: 2px solid var(--mainBlack);
   color: var(--hoverColor);
-}
-
-.browser_link {
-  position: relative;
-}
-
-.browser_link::after {
-  position: absolute;
-  content: "\25BC";
-  font-size: 13px;
-  top: 1px;
-  left: 2px;
 }
