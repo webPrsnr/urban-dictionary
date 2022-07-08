@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import styles from "./Sort.module.scss";
 
 const Sort = ({ setSortFlag }) => {
@@ -52,4 +52,4 @@ const Backdrop = ({ setPop }) => {
   return <div className={styles.backdrop} onClick={setPop}></div>;
 };
 
-export default Sort;
+export default memo(Sort);
