@@ -12,7 +12,9 @@ module.exports = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "src/front/dist"),
     publicPath: "/",
+    clean: true,
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
