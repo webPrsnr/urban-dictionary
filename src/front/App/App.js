@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout/Layout";
 import Home from "../pages/Home/Home";
 import Words from "../pages/Words/Words";
-// import BrowseWords from "../pages/BrowseWords/BrowseWords";
 import { Alphabet } from "../pages/Alphabet/Alphabet";
 import WordPage from "../pages/WordPage/WordPage";
 import { Provider } from "react-redux";
