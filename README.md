@@ -14,6 +14,8 @@ urban-dictionary - это аналог англоязычного сервиса
 - пагинация доступных слов по искомой букве, `/browse/N` - где N - искомая буква
 - отдельная вкладка для каждого слова `/words/id` - где id - идентификатор слова
 - на вкладке присутствуют меню по удалению, либо редактированию искомого слова
+- темная/светлая тема
+- сортировка `/words` по алфавиту и дате
 
 <p align="center">
   <img width="951" height="688" src="/__assets/peek.gif">
@@ -48,4 +50,4 @@ urban-dictionary - это аналог англоязычного сервиса
 - `cd urban-dictionary`
 - `npm i`
 - `npm run db`
-- `npm run dev`
+- `npm run dev` - for development `npm run build` `npm run server` - for production
