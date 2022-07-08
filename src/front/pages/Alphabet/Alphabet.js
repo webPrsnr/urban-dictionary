@@ -49,4 +49,4 @@ const Alphabet = () => {
   );
 };
 
-export { Alphabet };
+export default Alphabet;
