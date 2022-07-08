@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, memo } from "react";
 import { API } from "../../api/api";
 import styles from "./Search.module.scss";
 import useDebounce from "../../hooks/useDebounce";
@@ -53,4 +53,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default memo(Search);
