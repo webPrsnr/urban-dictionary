@@ -5,19 +5,17 @@ import styles from "./AddBtn.module.scss";
 
 const AddBtn = () => {
   const [modalFlag, setModalFlag] = useState(false);
-  const modalSwitch = () => {
-    setModalFlag(!modalFlag);
+  const modalSwitch = (flag) => {
+    setModalFlag(flag);
   };
   return (
     <>
-      <div className={styles.button} onClick={modalSwitch}>
+      <div className={styles.button} onClick={() => modalSwitch(true)}>
         Добавить
       </div>
-      {modalFlag && (
-        <Modal modalFlag={modalFlag} setModalFlag={setModalFlag}>
-          <AddWord />
-        </Modal>
-      )}
+      <Modal modalFlag={modalFlag} setModalFlag={setModalFlag}>
+        <AddWord />
+      </Modal>
     </>
   );
 };
