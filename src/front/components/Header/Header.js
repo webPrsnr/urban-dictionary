@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "./Header.module.scss";
 import Theme from "../Theme/Theme";
 import LettersDropDown from "../LettersDropDown/LettersDropDown";
@@ -7,7 +7,6 @@ import LettersDropDown from "../LettersDropDown/LettersDropDown";
 const Header = () => {
   const setActive = ({ isActive }) =>
     isActive ? styles.active_link : styles.header__link;
-
   return (
     <>
       <header className={styles.header_outer_block}>

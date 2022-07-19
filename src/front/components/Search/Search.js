@@ -18,7 +18,7 @@ const Search = () => {
     async function fetchDebounceData() {
       if (debounceSearchWord) {
         const data = await API.get(`words?search=${debounceSearchWord}`);
-        setWords(data);
+        setWords(data.records);
       }
     }
     fetchDebounceData();
