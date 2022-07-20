@@ -9,11 +9,8 @@ const WordPage = () => {
 
   useEffect(() => {
     (async function fetchData() {
-      // const response = await fetch(`words/${id}`);
-      // const data = await response.json();
       const data = await API.get(`words/${id}`);
-      // console.log(data);
-      setWord(data);
+      setWord(data.records);
     })();
   }, []);
 
