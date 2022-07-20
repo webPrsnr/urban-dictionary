@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 const mode =
   process.env.NODE_ENV === "production" ? "production" : "development";
@@ -14,7 +15,18 @@ module.exports = {
     publicPath: "/",
     clean: true,
   },
-  devtool: "source-map",
+  // devtool: "source-map",
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css", //"styles.css",
+      chunkFilename: "[id].css",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Urban Dictionary",
+      filename: "index.html",
+      template: "src/front/template.html",
+    }),
+  ],
   module: {
     rules: [
       {
@@ -43,16 +55,9 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: "styles.css",
-    }),
-    new HtmlWebpackPlugin({
-      title: "Urban Dictionary",
-      filename: "index.html",
-      template: "src/front/template.html",
-    }),
-  ],
+  optimization: {
+    minimizer: [new CssMinimizerPlugin(), "..."],
+  },
   resolve: {
     extensions: ["*", ".js", ".jsx", ".scss"],
   },
