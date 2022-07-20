@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { API } from "../../api/api";
 import LetterList from "../../components/LetterList/LetterList";
 import Pagination from "../../components/Pagination/Pagination";
+import setPagination from "../../utils/setPagination";
 import styles from "./Alphabet.module.scss";
 
 const Alphabet = () => {
@@ -26,8 +27,7 @@ const Alphabet = () => {
         `words?alphabet=${alphabet.toLowerCase()}&_offset=${itemOffset}`,
         { headerInfo: true }
       );
-      setWords(data.records);
-      setPageCount(Math.ceil(data.recordsLength / 12));
+      setPagination(setWords, setPageCount, data);
     }
     fetchData();
   }, [itemOffset, alphabet]);

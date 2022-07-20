@@ -8,6 +8,7 @@ import styles from "./Words.module.scss";
 import Alert from "../../components/Alert/Alert";
 import AddBtn from "../../components/AddBtn/AddBtn";
 import { useSelector } from "react-redux";
+import setPagination from "../../utils/setPagination";
 
 const Words = () => {
   const [words, setWords] = useState([]);
@@ -23,11 +24,9 @@ const Words = () => {
   useEffect(() => {
     (async function fetchData() {
       const data = await API.get(
-        `words?sort=${sortFlag}&_offset=${itemOffset}`,
-        { headerInfo: true }
+        `words?sort=${sortFlag}&_offset=${itemOffset}`
       );
-      setWords(data.records);
-      setPageCount(Math.ceil(data.recordsLength / 12));
+      setPagination(setWords, setPageCount, data);
     })();
   }, [itemOffset, sortFlag]);
 
