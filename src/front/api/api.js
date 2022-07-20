@@ -6,10 +6,9 @@ export const API = {
     const record = await response.json();
     return record;
   },
-  async get(query, par) {
+  async get(query) {
     const response = await fetch(CURRENT_URL + query);
     const record = await response.json();
-    if (!par) return record.data;
     return {
       records: record.data,
       recordsLength: response.headers.get("x-content"),
