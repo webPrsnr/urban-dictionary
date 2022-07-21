@@ -1,19 +1,15 @@
 const { USERS_GET_ONE, USERS_INSERT } = require("./authQueries");
-const { dbAll, dbRun } = require("./utils");
+const { CommonQuery } = require("./utils");
 
-class User {
+class User extends CommonQuery {
   async find(login) {
-    const data = await dbAll(USERS_GET_ONE, login);
-    return data;
+    return super.find(login, USERS_GET_ONE);
   }
 
   async create(params) {
-    const data = await dbRun(USERS_INSERT, [
-      params.id,
-      params.login,
-      params.password,
-    ]);
-    return data;
+    const data = [params.id, params.login, params.password];
+    const resp = super.create(data, USERS_INSERT);
+    return resp;
   }
 }
 

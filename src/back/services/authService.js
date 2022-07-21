@@ -1,6 +1,7 @@
 const User = require("../database/Auth");
 const { v4: uuid } = require("uuid");
 const bcrypt = require("bcrypt");
+const tokenService = require("./tokenService");
 
 const registration = async (login, password) => {
   const candidate = await User.find(login);
@@ -13,8 +14,16 @@ const registration = async (login, password) => {
     password: await bcrypt.hash(password, 3),
   };
   const user = await User.create(paramsToInsert);
-  //   console.log(user);
-  return user;
+
+  const payload = { id: user[0], login: user[1] };
+  const tokens = tokenService.generateTokens(payload);
+
+  const res = tokenService.saveToken(user[0], tokens.refreshToken);
+  return {
+    id: user[0],
+    login: user[1],
+    tokens,
+  };
 };
 
 const login = async () => {};
