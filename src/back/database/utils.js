@@ -23,7 +23,7 @@ const dbRun = (sql, values) => {
       if (err) rej({ status: 500, message: err });
       if (this.changes === 0)
         rej({ status: 404, message: "ID does not exist" });
-      res(rows);
+      res(values);
     });
   });
 };
@@ -37,8 +37,22 @@ const getSorted = (sortFlag) => {
   ).replace("DESC", limitList[sortFlag].flag);
 };
 
+class CommonQuery {
+  find(param, query) {
+    const data = dbAll(query, param);
+    return data;
+  }
+
+  async create(params, query) {
+    const data = await dbRun(query, params);
+    return data;
+  }
+}
+
 module.exports = {
   dbAll,
   dbRun,
   getSorted,
+  CommonQuery,
+  dbUpdate,
 };
