@@ -47,7 +47,9 @@ const login = async (login, password) => {
   };
 };
 
-const logout = async () => {};
+const logout = async (refreshToken) => {
+  await tokenService.removeToken(refreshToken);
+};
 
 const refresh = async () => {};
 

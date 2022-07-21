@@ -2,6 +2,7 @@ const {
   TOKENS_GET_ONE,
   TOKENS_INSERT,
   TOKENS_UPDATE,
+  TOKENS_DELETE,
 } = require("./tokenQueries");
 const { CommonQuery, dbRun } = require("./utils");
 
@@ -16,6 +17,10 @@ class Token extends CommonQuery {
 
   async refresh(userId, refreshToken) {
     await dbRun(TOKENS_UPDATE, [refreshToken, userId]);
+  }
+
+  async delete(refreshToken) {
+    await dbRun(TOKENS_DELETE, refreshToken);
   }
 }
 

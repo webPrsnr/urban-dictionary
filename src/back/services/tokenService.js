@@ -23,7 +23,12 @@ const saveToken = async (userId, refreshToken) => {
   await Token.create(userId, refreshToken);
 };
 
+const removeToken = async (refreshToken) => {
+  await Token.delete(refreshToken);
+};
+
 module.exports = {
   generateTokens,
   saveToken,
+  removeToken,
 };
