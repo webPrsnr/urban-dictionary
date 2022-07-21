@@ -19,7 +19,19 @@ const registration = async (req, res) => {
 
 const login = async (req, res) => {
   try {
-  } catch (error) {}
+    const { body } = req;
+    const userData = await authService.login(body.login, body.password);
+    res.cookie("refreshToken", userData.tokens.refreshToken, {
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+    });
+    res.status(200).send({ status: "OK", data: userData });
+  } catch (error) {
+    res.status(error?.status || 500).send({
+      status: "FAILED",
+      data: { error: error?.message || error },
+    });
+  }
 };
 
 const logout = async (req, res) => {
