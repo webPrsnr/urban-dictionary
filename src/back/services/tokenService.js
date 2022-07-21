@@ -16,13 +16,11 @@ const generateTokens = (payload) => {
 
 const saveToken = async (userId, refreshToken) => {
   const token = await Token.find(userId);
-  console.log("token", token);
   if (token.length) {
-    const refreshData = await Token.refresh(userId, refreshToken);
-    console.log("TOKEN IS EXIST");
+    await Token.refresh(userId, refreshToken);
     return;
   }
-  const tokenData = await Token.create(userId, refreshToken);
+  await Token.create(userId, refreshToken);
 };
 
 module.exports = {
