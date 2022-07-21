@@ -54,5 +54,4 @@ module.exports = {
   dbRun,
   getSorted,
   CommonQuery,
-  dbUpdate,
 };
