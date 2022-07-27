@@ -41,13 +41,15 @@ const logout = async (req, res) => {
     res.clearCookie("refreshToken");
     res.status(200).send({ status: "OK" });
   } catch (error) {
-    console.error(error);
+    res.status(error?.status || 500).send({
+      status: "FAILED",
+      data: { error: error?.message || error },
+    });
   }
 };
 
 const refresh = async (req, res) => {
   try {
-    res.json("123");
   } catch (error) {}
 };
 
