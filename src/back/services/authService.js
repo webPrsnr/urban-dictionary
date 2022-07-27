@@ -51,7 +51,25 @@ const logout = async (refreshToken) => {
   await tokenService.removeToken(refreshToken);
 };
 
-const refresh = async () => {};
+const refresh = async (refreshToken) => {
+  if (!refreshToken) throw new Error("Refresh token is empty");
+
+  const userData = tokenService.checkRefreshToken(refreshToken);
+  const tokenFromDB = await tokenService.findToken(refreshToken);
+
+  if (!userData && !tokenFromDB) throw new Error("Unauthorized error");
+
+  const candidate = await User.find(userData.login);
+  const payload = { id: candidate[0], login: candidate[1] };
+  const tokens = tokenService.generateTokens(payload);
+
+  await tokenService.saveToken(candidate[0].id, tokens.refreshToken);
+  return {
+    id: candidate[0].id,
+    login: candidate[0].login,
+    tokens,
+  };
+};
 
 module.exports = {
   registration,

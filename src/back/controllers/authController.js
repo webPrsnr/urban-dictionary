@@ -50,7 +50,16 @@ const logout = async (req, res) => {
 
 const refresh = async (req, res) => {
   try {
-  } catch (error) {}
+    const { cookies } = req;
+    const newUser = await authService.refresh(cookies.refreshToken);
+    res.cookie("refreshToken", newUser.tokens.refreshToken, {
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+      httpOnly: true,
+    });
+    res.status(200).send({ status: "OK", data: newUser });
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 module.exports = {
